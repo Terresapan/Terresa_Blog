@@ -1,0 +1,44 @@
+@import "@fontsource/work-sans";
+@import "@fontsource/source-serif-pro";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Define your custom styles within the 'base' layer */
+  html {
+    scroll-behavior: smooth;
+    transition: scroll-behavior 1s ease-in-out;
+  }
+}
+
+@layer components {
+  .main {
+    @apply flex min-h-screen flex-col items-center justify-between space-y-36 px-6 py-24 bg-gradient-to-br from-LightSurface to-DarkPrimary/60 dark:from-DarkSurface dark:to-LightPrimary/60;
+  }
+  .card {
+    @apply w-full rounded-lg shadow-md overflow-hidden space-y-2 ring-1 ring-LightSurface/20 dark:ring-DarkPrimary/20 bg-LightSurface/50 dark:bg-DarkSurface/50 hover:bg-LightSurface  dark:hover:bg-DarkSurface hover:ring-LightSurface/50 dark:hover:ring-DarkPrimary;
+  }
+  .btn {
+    @apply self-stretch p-4 bg-gradient-to-br from-LightPrimary to-LightAccent dark:from-DarkPrimary dark:to-DarkAccent text-textOnLightPrimary dark:text-textOnDarkPrimary rounded-md justify-center items-center gap-3 inline-flex hover:bg-LightPrimary dark:hover:bg-DarkPrimary;
+  }
+  .btntext {
+    @apply w-full text-textOnLightPrimary dark:text-textOnDarkPrimary text-base font-medium font-work-sans;
+  }
+  .btn:hover {
+    @apply bg-gradient-to-br from-LightAccent to-LightPrimary  dark:from-DarkAccent dark:to-DarkPrimary;
+  }
+  .heading {
+    @apply text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-LightPrimary to-LightAccent dark:bg-gradient-to-r dark:from-DarkPrimary  dark:to-DarkAccent bg-clip-text text-transparent;
+  }
+  .input {
+    @apply w-full p-4 rounded-lg text-textOnLightVariant dark:text-textOnDark bg-LightSurface dark:bg-LightPrimary focus:outline-LightPrimary dark:focus:outline-DarkPrimary;
+  }
+  .name {
+    @apply py-10 text-6xl md:text-8xl uppercase font-bold text-center bg-gradient-to-r from-LightPrimary to-LightAccent dark:bg-gradient-to-r dark:from-DarkPrimary  dark:to-DarkAccent bg-clip-text text-transparent;
+  }
+  .tag {
+    @apply text-2xl font-serif font-bold uppercase tracking-wide bg-gradient-to-r from-LightPrimary to-LightAccent dark:bg-gradient-to-r dark:from-DarkPrimary dark:to-DarkAccent bg-clip-text text-transparent;
+  }
+}
