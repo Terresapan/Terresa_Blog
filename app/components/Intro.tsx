@@ -10,7 +10,7 @@ export default function Intro() {
       <div className="md:pr-6">
         <h1 className="name">Hi, I am Terresa!</h1>
         <p className="w-5/6 mx-auto pt-6 text-xl font-semibold text-center leading-8 text-textOnLightVariant dark:text-textOnDark">
-          I'm an <span className="tag">AI Enginner</span> with the creative
+          I am an <span className="tag">AI Enginner</span> with the creative
           vision of a <span className="tag">Technical Artist </span>
           and the strategic mind of a{" "}
           <span className="tag">Social Media Strategist.</span> Join me as we
