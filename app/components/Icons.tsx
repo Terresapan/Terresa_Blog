@@ -24,7 +24,7 @@ export default function Icons() {
           style={{ width: "24px", height: "auto" }}
         />
       </Link>
-      <Link href="">
+      <Link href="null">
         <Image
           className="transition-transform duration-300 transform hover:scale-110"
           src="/icons/instagram.svg"

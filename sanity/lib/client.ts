@@ -8,6 +8,11 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
+  perspective: "published",
+  stega: {
+    enabled: false,
+    studioUrl: "/studio",
+  },
 })
 
 const builder = ImageUrlBuilder(client);

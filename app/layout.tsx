@@ -5,6 +5,8 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { LightDarkProvider } from "./theme/LightDarkProvider";
 import { cookies } from "next/headers";
+import LiveVisualEditing from "./components/LiveVisualEditing";
+import { draftMode } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +38,7 @@ export default function RootLayout({
         <LightDarkProvider>
           <Header />
           {children}
+          {draftMode().isEnabled && <LiveVisualEditing />}
           <Footer />
         </LightDarkProvider>
       </body>
