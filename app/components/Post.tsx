@@ -8,10 +8,12 @@ import { dataset, projectId } from "@/sanity/env";
 const builder = imageUrlBuilder({ projectId, dataset });
 
 const Post = ({ post }: { post: SanityDocument }) => {
-  const { title, mainImage, body } = post;
+  const { mainImage, body } = post;
   return (
     <section className="container mx-auto prose prose-xl px-4 py-32 bg-LightSurface/50 dark:bg-DarkSurface/50">
-      {title ? <h1 className="prose dark:prose-invert">{title}</h1> : null}
+      {post.title ? (
+        <h1 className="prose dark:prose-invert">{post.title}</h1>
+      ) : null}
       {mainImage ? (
         <Image
           className="w-full object-cover rounded-xl"

@@ -3,10 +3,23 @@ import { draftMode } from "next/headers";
 import { loadQuery } from "@/sanity/lib/store";
 import { postsQuery, postQuery } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
-import Post from "../components/Post";
-import PostPreview from "../components/PostPreview";
+import Post from "@/app/components/Post";
+import PostPreview from "@/app/components/PostPreview";
 
 export const revalidate = 60;
+
+export async function generateMetadata({ params }: { params: QueryParams }) {
+  const initial = await loadQuery<SanityDocument>(postQuery, params, {
+    perspective: draftMode().isEnabled ? "previewDrafts" : "published",
+  });
+  if (!initial) {
+    return { title: "Post not found" };
+  }
+  return {
+    title: initial.data.title,
+    description: initial.data.description,
+  };
+}
 
 export async function generateStaticParams() {
   const posts = await client.fetch<SanityDocument[]>(postsQuery);

@@ -17,10 +17,10 @@ export async function handleSubscription(formData: FormData) {
 
   await saveSubscription(subscription);
 
-  // Clear the form fields
-  for (const [name, _] of formData) {
+   // Clear the form fields
+   for (const [name, _] of formData) {
     formData.set(name, '');
   }
 
-  return redirect('/');
+  redirect('/');
 } 

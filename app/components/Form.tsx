@@ -1,4 +1,5 @@
 import { handleSubscription } from "../../actions";
+import SubmitButton from "./SubmitButton";
 
 export default function From() {
   return (
@@ -33,9 +34,7 @@ export default function From() {
           />
         </div>
         <div className="btn btn:hover">
-          <button className="text-textOnLightPrimary dark:text-textOnDarkPrimary text-base font-medium font-work-sans">
-            Subscribe
-          </button>
+          <SubmitButton />
         </div>
       </form>
     </div>
