@@ -7,6 +7,7 @@ import Post from "@/app/components/Post";
 import PostPreview from "@/app/components/PostPreview";
 
 export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: QueryParams }) {
   const initial = await loadQuery<SanityDocument>(postQuery, params, {
@@ -23,6 +24,11 @@ export async function generateMetadata({ params }: { params: QueryParams }) {
 
 export async function generateStaticParams() {
   const posts = await client.fetch<SanityDocument[]>(postsQuery);
+  {
+    next: {
+      revalidate: 60;
+    }
+  }
   //console.log(posts);
   return posts.map((post) => ({
     slug: post.slug.current,
